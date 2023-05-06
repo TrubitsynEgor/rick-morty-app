@@ -1,0 +1,17 @@
+.menu {}
+
+.list {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.link {
+	font-family: var(--comicNeue);
+	font-size: 22px;
+	transition: all .3s ease-in-out;
+
+	&:hover {
+		color: var(--active);
+	}
+}
