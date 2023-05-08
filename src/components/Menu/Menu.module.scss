@@ -3,15 +3,37 @@
 .list {
 	display: flex;
 	align-items: center;
-	gap: 20px;
+	gap: 30px;
+}
+
+.item {
+	position: relative;
 }
 
 .link {
 	font-family: var(--comicNeue);
 	font-size: 22px;
 	transition: all .3s ease-in-out;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+
+	& svg {
+		margin-top: 3px;
+		cursor: pointer;
+		transition: all .3s ease-in-out;
+
+	}
 
 	&:hover {
 		color: var(--active);
+
+		& svg {
+			fill: var(--active);
+		}
+	}
+
+	&.open svg {
+		transform: rotate(90deg);
 	}
 }

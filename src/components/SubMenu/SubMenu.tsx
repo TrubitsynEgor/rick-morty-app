@@ -1,15 +1,24 @@
-import { DetailsUlProps } from '@/types';
 import styles from './SubMenu.module.scss';
 import cn from 'classnames'
 import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
-interface SubMenuProps extends DetailsUlProps { }
+const seasons = new Array(5).fill('season')
 
-export const SubMenu: FC<SubMenuProps> = ({ className, ...props }) => {
+interface SubMenuProps {
+  openSubMenu: () => void
+  closeSubMenu: () => void
+}
+
+export const SubMenu: FC<SubMenuProps> = ({ openSubMenu, closeSubMenu }) => {
 
   return (
-    <ul className={cn(styles.subMenu, className)} {...props}>
-
+    <ul className={cn(styles.subMenu)} onMouseEnter={openSubMenu} onMouseLeave={closeSubMenu}>
+      {seasons.map((el, idx) =>
+        <li>
+          <Link to={`${el}${idx + 1}`}>{`${idx + 1} ${el}`}</Link>
+        </li>
+      )}
     </ul>
   )
 };
