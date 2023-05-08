@@ -1,0 +1,41 @@
+.mainCharacters {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 40px 20px;
+	margin-top: 30px;
+
+}
+
+.image {
+	width: 100px;
+	height: 200px;
+	transition: all .3s ease-in-out;
+
+	&:hover {
+		opacity: .8;
+	}
+
+
+}
+
+.link {}
+
+.item {
+	display: flex;
+	gap: 32px;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.title {
+	cursor: pointer;
+	transition: all .3s ease-in-out;
+
+	&:hover {
+		color: var(--active);
+	}
+}
