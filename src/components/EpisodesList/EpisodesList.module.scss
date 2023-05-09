@@ -1,0 +1,21 @@
+.episodesList {
+	padding-top: 40px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 15px;
+}
+
+.item {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+.badge {
+	background-color: var(--primary);
+	color: var(--dark);
+	padding: 5px;
+	border-radius: 7px;
+}

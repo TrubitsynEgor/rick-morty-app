@@ -1,1 +1,14 @@
-.seasonDetails {}
+.seasonDetails {
+	padding: 100px 0;
+}
+
+.content {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 40px;
+}
+
+.descr {
+	max-width: 600px;
+}
