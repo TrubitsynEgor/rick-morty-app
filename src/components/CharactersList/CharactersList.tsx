@@ -6,6 +6,9 @@ import { useQuery } from 'react-query';
 import { getAllCharacters } from '@/services/rickAndMorty';
 import { Button, Container, ErrorPage, Loader, Title } from '..';
 import { Link } from 'react-router-dom';
+import { BsCalendarHeartFill } from 'react-icons/bs'
+import { useFavoritesHandler } from '@/hooks';
+
 
 interface CharactersListProps extends DetailsUlProps { }
 
@@ -16,11 +19,10 @@ export const CharactersList: FC<CharactersListProps> = ({ className, ...props })
     queryFn: getAllCharacters
   })
 
-
+  const { handleFavorites, favorites } = useFavoritesHandler()
 
   if (isLoading) return <Loader />
   if (isError) return <ErrorPage />
-
 
   return (
     <Container className={styles.container}>
@@ -30,7 +32,15 @@ export const CharactersList: FC<CharactersListProps> = ({ className, ...props })
           <li key={el.id} className={styles.item}>
             <Link to={`/characters/${el.id}`}><img src={el.image} alt="" /></Link>
             <Title tag='h3'>{el.name}</Title>
-            <Link to={`/characters/${el.id}`}><Button appearance='ghost'>Read more</Button></Link>
+            <div className={styles.btnWrapper}>
+              <Link to={`/characters/${el.id}`}><Button appearance='ghost'>Read more</Button></Link>
+              <button className={cn(styles.btn)} onClick={() => handleFavorites(el.id.toString())}>
+                <BsCalendarHeartFill
+                  className={cn({ [styles.active]: favorites.some(f => el.id === f.id) })}
+
+                /></button>
+            </div>
+
           </li>
         )}
       </ul>

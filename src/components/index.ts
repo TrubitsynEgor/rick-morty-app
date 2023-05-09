@@ -13,6 +13,10 @@ export * from './EpisodesList/EpisodesList'
 export * from './ErrorPage/ErrorPage'
 export * from './CharactersList/CharactersList'
 export * from './CharacterDetails/CharacterDetails'
+export * from './Favorites/Favorites'
+
+
+export * from './Favorites/favoritesStore'
 
 
 

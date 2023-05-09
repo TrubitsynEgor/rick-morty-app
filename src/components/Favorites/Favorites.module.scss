@@ -1,0 +1,47 @@
+.favorites {
+	padding: 100px 0;
+
+}
+
+.list {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 32px;
+	position: relative;
+}
+
+.info {
+	margin-top: 20px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 13px;
+	z-index: 5;
+
+
+}
+
+.commonInfo {
+	background-color: var(--primary);
+	color: var(--dark);
+	padding: 4px;
+	border-radius: 7px;
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	& svg {
+		transition: all .3s ease-in-out;
+		width: 40px;
+		height: 40px;
+		cursor: pointer;
+
+		&:hover {
+			opacity: .8;
+			transform: scale(1.1);
+		}
+	}
+}

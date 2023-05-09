@@ -9,6 +9,29 @@
 
 }
 
+
+
+.btn {
+	border: none;
+	padding: 0;
+
+	background: none;
+
+	& svg {
+		cursor: pointer;
+		width: 30px;
+		height: 30px;
+		fill: var(--light);
+		transition: all .3s ease-in-out;
+
+		&.active,
+		&:hover {
+			transform: scale(1.1);
+			fill: tomato;
+		}
+	}
+}
+
 .item {
 	display: flex;
 	flex-direction: column;
@@ -17,9 +40,8 @@
 	padding: 10px;
 	box-shadow: 2px 2px 2px 10px rgba(#ffffff, .1);
 
-	& button {
-		width: 120px;
-	}
+
+
 
 	& img {
 		transition: all .3s ease-in-out;
@@ -28,4 +50,10 @@
 			opacity: .8;
 		}
 	}
+}
+
+.btnWrapper {
+	display: flex;
+	align-items: center;
+	gap: 20px;
 }

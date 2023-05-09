@@ -7,14 +7,19 @@ import { Link, useParams } from 'react-router-dom';
 import { getCharacterById } from '@/services/rickAndMorty';
 import { Container, ErrorPage, Loader, Title } from '..';
 import { TbSquareRoundedArrowLeftFilled, TbSquareRoundedArrowRightFilled } from 'react-icons/tb'
+import { BsCalendarHeartFill } from 'react-icons/bs'
+import { useFavoritesHandler } from '@/hooks';
+
 interface CharacterDetailsProps extends DetailsDivProps { }
 
 export const CharacterDetails: FC<CharacterDetailsProps> = ({ className, ...props }) => {
   const { id } = useParams()
-  const { data, isError, isLoading, isSuccess } = useQuery({
+  const { data, isError, isLoading } = useQuery({
     queryKey: ['character', `character${id}`],
     queryFn: () => getCharacterById(id)
   })
+
+  const { favorites, handleFavorites } = useFavoritesHandler()
 
 
 
@@ -24,7 +29,15 @@ export const CharacterDetails: FC<CharacterDetailsProps> = ({ className, ...prop
   return (
     <div className={cn(styles.characterDetails, className)} {...props}>
       <Container className={styles.container}>
-        <img src={data.image} alt="" />
+        <div className={styles.imgBox}>
+          <img src={data.image} alt="" />
+          <BsCalendarHeartFill className={cn(styles.favorite, {
+            [styles.active]: favorites.some(f => data.id === f.id)
+          })}
+            aria-label='favorite button'
+            onClick={(() => handleFavorites(data.id))}
+          />
+        </div>
         <div className={styles.info}>
           <Title tag='h2'>{data.name}</Title>
           <span>Specie: <span className={styles.commonInfo}>{data.species}</span> </span>

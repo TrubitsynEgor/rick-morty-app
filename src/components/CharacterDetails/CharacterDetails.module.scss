@@ -38,3 +38,25 @@
 	display: flex;
 	gap: 15px;
 }
+
+.imgBox {
+	position: relative;
+}
+
+.favorite {
+	position: absolute;
+	left: 10px;
+	top: -20px;
+	z-index: 10;
+	width: 40px;
+	height: 40px;
+	fill: var(--primary);
+	transition: all .3s ease-in-out;
+	cursor: pointer;
+
+	&.active,
+	&:hover {
+		transform: scale(1.1);
+		fill: tomato;
+	}
+}
