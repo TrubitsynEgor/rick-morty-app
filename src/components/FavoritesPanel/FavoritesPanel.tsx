@@ -7,9 +7,6 @@ import { Link } from 'react-router-dom';
 import { useFavorites } from '..';
 
 
-
-
-
 export const FavoritesPanel: FC = () => {
 
   const count = useFavorites(state => state.count)

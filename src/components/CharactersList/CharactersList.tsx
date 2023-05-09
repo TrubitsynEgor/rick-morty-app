@@ -10,9 +10,8 @@ import { BsCalendarHeartFill } from 'react-icons/bs'
 import { useFavoritesHandler } from '@/hooks';
 
 
-interface CharactersListProps extends DetailsUlProps { }
 
-export const CharactersList: FC<CharactersListProps> = ({ className, ...props }) => {
+export const CharactersList: FC<DetailsUlProps> = ({ className, ...props }) => {
 
   const { data, isError, isSuccess, isLoading } = useQuery({
     queryKey: ['characters', 'all'],

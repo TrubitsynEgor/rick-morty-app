@@ -7,9 +7,8 @@ import { IoIosArrowDroprightCircle } from 'react-icons/io'
 import { SubMenu } from '..';
 
 
-interface MenuProps extends DetailsDivProps { }
 
-export const Menu: FC<MenuProps> = ({ className, ...props }) => {
+export const Menu: FC<DetailsDivProps> = ({ className, ...props }) => {
   const [subMenuIsOpen, setSubMenuIsOpen] = useState(false)
   const dropdownRef = useRef(null)
 

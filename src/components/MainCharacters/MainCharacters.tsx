@@ -1,4 +1,3 @@
-import { DetailsDivProps } from '@/types';
 import styles from './MainCharacters.module.scss';
 import cn from 'classnames'
 import { FC } from 'react';

@@ -1,11 +1,10 @@
 import { DetailsUlProps, ISeasons } from '@/types';
 import styles from './EpisodesList.module.scss';
 import cn from 'classnames'
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 import { useQuery } from 'react-query';
-import { BASE_URL, getSeasonById } from '@/services/rickAndMorty';
+import { getSeasonById } from '@/services/rickAndMorty';
 import { ErrorPage, Loader, Title } from '..';
-import { useParams } from 'react-router-dom';
 
 interface EpisodesListProps extends DetailsUlProps {
   id?: string

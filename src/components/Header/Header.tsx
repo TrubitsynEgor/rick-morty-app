@@ -4,9 +4,8 @@ import cn from 'classnames'
 import { FC } from 'react';
 import { AuthPanel, Container, FavoritesPanel, Logo, Menu } from '..';
 
-interface HeaderProps extends DetailsDivProps { }
 
-export const Header: FC<HeaderProps> = ({ className, ...props }) => {
+export const Header: FC<DetailsDivProps> = ({ className, ...props }) => {
 
   return (
     <header className={cn(styles.header, className)} {...props}>

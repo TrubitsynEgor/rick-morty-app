@@ -6,14 +6,10 @@ import { Container, Title, useFavorites } from '..';
 import { ReactComponent as RemoveSvg } from '../../assets/remove.svg'
 import { Link } from 'react-router-dom';
 
-interface FavoritesProps extends DetailsDivProps { }
 
-export const Favorites: FC<FavoritesProps> = ({ className, ...props }) => {
+export const Favorites: FC<DetailsDivProps> = ({ className, ...props }) => {
   const favorites = useFavorites(state => state.favorites)
   const removeFavorite = useFavorites(state => state.removeFavorite)
-
-
-
 
   return (
     <div className={cn(styles.favorites, className)} {...props}>

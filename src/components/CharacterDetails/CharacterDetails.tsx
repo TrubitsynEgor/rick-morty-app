@@ -1,4 +1,4 @@
-import { DetailsDivProps, ICharacter } from '@/types';
+import { DetailsDivProps } from '@/types';
 import styles from './CharacterDetails.module.scss';
 import cn from 'classnames'
 import { FC } from 'react';
@@ -10,9 +10,8 @@ import { TbSquareRoundedArrowLeftFilled, TbSquareRoundedArrowRightFilled } from 
 import { BsCalendarHeartFill } from 'react-icons/bs'
 import { useFavoritesHandler } from '@/hooks';
 
-interface CharacterDetailsProps extends DetailsDivProps { }
 
-export const CharacterDetails: FC<CharacterDetailsProps> = ({ className, ...props }) => {
+export const CharacterDetails: FC<DetailsDivProps> = ({ className, ...props }) => {
   const { id } = useParams()
   const { data, isError, isLoading } = useQuery({
     queryKey: ['character', `character${id}`],

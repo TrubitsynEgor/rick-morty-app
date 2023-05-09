@@ -6,9 +6,6 @@ import { Link } from 'react-router-dom';
 import HeroImg from '../../assets/hero_content.png'
 
 
-
-
-
 export const Hero: FC = () => {
 
   return (
