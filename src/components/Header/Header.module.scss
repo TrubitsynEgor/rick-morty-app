@@ -1,7 +1,12 @@
 .header {
 	padding: 10px 0;
 	background-color: var(--body-bg);
-	border: 1px solid var(--mine)
+	border: 1px solid var(--mine);
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+
 }
 
 .container {

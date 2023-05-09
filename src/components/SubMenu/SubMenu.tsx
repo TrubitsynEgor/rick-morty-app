@@ -13,12 +13,14 @@ interface SubMenuProps {
 export const SubMenu: FC<SubMenuProps> = ({ openSubMenu, closeSubMenu }) => {
 
   return (
-    <ul className={cn(styles.subMenu)} onMouseEnter={openSubMenu} onMouseLeave={closeSubMenu}>
-      {seasons.map((el, idx) =>
-        <li key={idx}>
-          <Link to={`${el}${idx + 1}`}>{`${idx + 1} ${el}`}</Link>
-        </li>
-      )}
-    </ul>
+    <div className={styles.wrapper}>
+      <ul className={cn(styles.subMenu)} onMouseOver={openSubMenu} onMouseLeave={closeSubMenu}>
+        {seasons.map((el, idx) =>
+          <li key={idx}>
+            <Link to={`/seasons/${idx + 1}`}>{`${idx + 1} ${el}`}</Link>
+          </li>
+        )}
+      </ul>
+    </div>
   )
 };

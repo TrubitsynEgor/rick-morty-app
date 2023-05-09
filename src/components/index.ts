@@ -8,6 +8,7 @@ export * from './Hero/Hero'
 export * from './Storyline/Storyline'
 export * from './MainCharacters/MainCharacters'
 export * from './SeasonsList/SeasonsList'
+export * from './SeasonDetails/SeasonDetails'
 
 
 
