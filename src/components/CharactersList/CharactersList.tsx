@@ -21,6 +21,8 @@ export const CharactersList: FC<CharactersListProps> = ({ className, ...props })
 
   const { handleFavorites, favorites } = useFavoritesHandler()
 
+
+
   if (isLoading) return <Loader />
   if (isError) return <ErrorPage />
 

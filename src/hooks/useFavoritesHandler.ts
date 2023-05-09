@@ -14,5 +14,9 @@ export const useFavoritesHandler = () => {
 		}
 	}
 
+
+
+
+
 	return { handleFavorites, favorites }
 }

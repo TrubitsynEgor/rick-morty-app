@@ -12,6 +12,9 @@ export const Favorites: FC<FavoritesProps> = ({ className, ...props }) => {
   const favorites = useFavorites(state => state.favorites)
   const removeFavorite = useFavorites(state => state.removeFavorite)
 
+
+
+
   return (
     <div className={cn(styles.favorites, className)} {...props}>
       <Container>
