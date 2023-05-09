@@ -11,6 +11,8 @@ export * from './SeasonsList/SeasonsList'
 export * from './SeasonDetails/SeasonDetails'
 export * from './EpisodesList/EpisodesList'
 export * from './ErrorPage/ErrorPage'
+export * from './CharactersList/CharactersList'
+export * from './CharacterDetails/CharacterDetails'
 
 
 

@@ -12,7 +12,7 @@ interface StorylineProps extends DetailsDivProps { }
 export const Storyline: FC<StorylineProps> = ({ className, ...props }) => {
 
   return (
-    <div className={cn(styles.storyline, className)} {...props}>
+    <div id='storyline' className={cn(styles.storyline, className)} {...props}>
       <Container className={styles.container}>
         <Title tag='h2' className={styles.title}><StorylineSVG /> Storyline:</Title>
         <div className={styles.descrBox}>
