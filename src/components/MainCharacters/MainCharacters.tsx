@@ -8,6 +8,7 @@ import Morty from '../../assets/mainCharacters/morty.png'
 import Jerry from '../../assets/mainCharacters/jerry.png'
 import Beth from '../../assets/mainCharacters/beth.png'
 import Summer from '../../assets/mainCharacters/sumer.png'
+import { Paragraph, Title } from '..';
 
 const mainCharacters = [
   { image: Rick, name: 'Rick Sanchez', description: "Rick Sanchez (voiced by Justin Roiland) is a brilliant scientist and alcoholic whose inventions and experiments serve as the basis for episodes. Morty Smith and Summer Smith's grandfather, as well as Beth's father. Rick was absent from the family for many years until he finally returned before the pilot episode to live with the Smith family, much to Jerry's disapproval. He currently resides in the garage of Smith's house, where his entire laboratory is based. Here he builds new inventions, travels to other dimensions, and tests things on alien life forms." },
@@ -29,11 +30,15 @@ export const MainCharacters: FC = () => {
           </Link>
 
           <div className={styles.content}>
-            <Link className={styles.link} to={`/characters/${idx + 1}`}>
-              <h3 className={styles.title}>{el.name}</h3>
-            </Link>
 
-            <p className={styles.descr}>{el.description}</p>
+            <Title tag='h3' className={styles.title}>
+              <Link className={styles.link} to={`/characters/${idx + 1}`}>
+                {el.name}
+              </Link>
+            </Title>
+
+
+            <Paragraph className={styles.descr}>{el.description}</Paragraph>
           </div>
         </li>
       )}

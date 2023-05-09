@@ -15,7 +15,7 @@ export const SubMenu: FC<SubMenuProps> = ({ openSubMenu, closeSubMenu }) => {
   return (
     <ul className={cn(styles.subMenu)} onMouseEnter={openSubMenu} onMouseLeave={closeSubMenu}>
       {seasons.map((el, idx) =>
-        <li>
+        <li key={idx}>
           <Link to={`${el}${idx + 1}`}>{`${idx + 1} ${el}`}</Link>
         </li>
       )}
