@@ -12,7 +12,7 @@ interface AuthPanelProps {
 export const AuthPanel: FC<AuthPanelProps> = ({ openPopup, openProfile }) => {
   const isAuth = useAuth(state => state.isAuth)
   return (
-    <button onClick={(e) => isAuth ? openProfile((prev) => !prev) : openPopup()} className={cn(styles.authPanel)} >
+    <button onClick={() => isAuth ? openProfile((prev) => !prev) : openPopup()} className={cn(styles.authPanel)} >
       <LoginSVG />
     </button>
   )

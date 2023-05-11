@@ -2,7 +2,7 @@ import { DetailsDivProps } from '@/types';
 import styles from './Popup.module.scss';
 import cn from 'classnames'
 import { Dispatch, FC, SetStateAction } from 'react';
-import { Button, Portal } from '@/components';
+import { Portal } from '@/components';
 import { AiOutlineClose } from 'react-icons/ai'
 import { useAuth } from '@/components/AuthPanel/userStore';
 

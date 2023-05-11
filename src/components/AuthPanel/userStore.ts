@@ -7,7 +7,7 @@ interface IUser {
 	email: string
 	isAuth: boolean
 	error: null | string
-	loginIn: (email: string | null) => void
+	loginIn: (email: string) => void
 	loginOut: () => void
 	onError: (message: string) => void
 }

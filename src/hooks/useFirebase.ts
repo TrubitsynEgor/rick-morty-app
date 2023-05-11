@@ -10,7 +10,8 @@ export const useFirebase = () => {
 		const auth = getAuth()
 		signInWithEmailAndPassword(auth, email, password)
 			.then(({ user }) => {
-				loginIn(user.email)
+				if (user.email !== null) loginIn(user.email)
+
 			})
 			.catch((error) => onError(error.message))
 	}
@@ -20,7 +21,7 @@ export const useFirebase = () => {
 		const auth = getAuth()
 		createUserWithEmailAndPassword(auth, email, password)
 			.then(({ user }) => {
-				loginIn(user.email)
+				if (user.email !== null) loginIn(user.email)
 			})
 
 			.catch((error) => onError(error.message))

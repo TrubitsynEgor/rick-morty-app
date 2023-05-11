@@ -1,7 +1,7 @@
 import { DetailsFormProps } from '@/types';
 import styles from './Form.module.scss';
 import cn from 'classnames'
-import { Dispatch, FC, SetStateAction, useState, Ref, MutableRefObject } from 'react';
+import { Dispatch, FC, SetStateAction, useState, MutableRefObject } from 'react';
 import { Button, Input } from '..';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai'
 import { useForm, Controller } from 'react-hook-form';
