@@ -2,7 +2,7 @@ import { DetailsUlProps, ISeasons } from '@/types';
 import styles from './EpisodesList.module.scss';
 import cn from 'classnames'
 import { FC } from 'react';
-import { useQuery } from 'react-query';
+import { useQuery } from '@tanstack/react-query';
 import { getSeasonById } from '@/services/rickAndMorty';
 import { ErrorPage, Loader, Title } from '..';
 

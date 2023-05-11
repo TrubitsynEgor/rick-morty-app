@@ -2,13 +2,13 @@ import { DetailsDivProps } from '@/types';
 import styles from './CharacterDetails.module.scss';
 import cn from 'classnames'
 import { FC } from 'react';
-import { useQuery } from 'react-query';
 import { Link, useParams } from 'react-router-dom';
 import { getCharacterById } from '@/services/rickAndMorty';
 import { Container, ErrorPage, Loader, Title } from '..';
 import { TbSquareRoundedArrowLeftFilled, TbSquareRoundedArrowRightFilled } from 'react-icons/tb'
 import { BsCalendarHeartFill } from 'react-icons/bs'
 import { useFavoritesHandler } from '@/hooks';
+import { useQuery } from '@tanstack/react-query';
 
 
 export const CharacterDetails: FC<DetailsDivProps> = ({ className, ...props }) => {
