@@ -1,5 +1,4 @@
 export * from './Header/Header'
-export * from './UI/Container/Container'
 export * from './Menu/Menu'
 export * from './SubMenu/SubMenu'
 export * from './AuthPanel/AuthPanel'
@@ -14,14 +13,19 @@ export * from './ErrorPage/ErrorPage'
 export * from './CharactersList/CharactersList'
 export * from './CharacterDetails/CharacterDetails'
 export * from './Favorites/Favorites'
+export * from './Form/Form'
+export * from './Profile/Profile'
 
 
 export * from './Favorites/favoritesStore'
 
 
-
+export * from './UI/Container/Container'
 export * from './UI/Logo/Logo'
 export * from './UI/Button/Button'
 export * from './UI/Title/Title'
 export * from './UI/Paragraph/Paragraph'
 export * from './UI/Loader/Loader'
+export * from './UI/Input/Input'
+export * from './UI/Popup/Popup'
+export * from './UI/Portal/Portal'

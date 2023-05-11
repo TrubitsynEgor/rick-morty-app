@@ -1,0 +1,51 @@
+.profile {
+	position: fixed;
+	z-index: 101;
+	width: 300px;
+	background-color: var(--dark);
+	right: 0;
+	top: 0;
+	height: 100vh;
+	padding: 23px;
+	border-left: 1px solid rgba(#ffffff, 0.2);
+	opacity: 0;
+	visibility: hidden;
+	transform: translateX(400px);
+	transition: all .3s ease-in-out;
+
+	&.isOpen {
+		opacity: 1;
+		visibility: visible;
+		transform: translateX(0);
+	}
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	padding-bottom: 10px;
+
+	& button {
+		border: none;
+		background: none;
+		color: var(--light);
+		cursor: pointer;
+
+		& svg {
+			width: 35px;
+			height: 35px;
+		}
+	}
+
+
+}
+
+.mortySvg {
+	width: 40px;
+	height: 40px;
+}
+
+.userInfo {
+	margin-top: 20px;
+}

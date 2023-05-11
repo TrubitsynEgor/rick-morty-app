@@ -7,7 +7,7 @@ interface IUser {
 	email: string
 	isAuth: boolean
 	error: null | string
-	loginIn: (email: string) => void
+	loginIn: (email: string | null) => void
 	loginOut: () => void
 	onError: (message: string) => void
 }
@@ -23,7 +23,7 @@ export const useAuth = create<IUser>()(
 				error: null,
 
 				loginIn: (email: string) => {
-					set((state) => ({ ...state, email, isAuth: true }))
+					set((state) => ({ ...state, email, isAuth: true, error: null }))
 				},
 				loginOut: () => {
 					set({

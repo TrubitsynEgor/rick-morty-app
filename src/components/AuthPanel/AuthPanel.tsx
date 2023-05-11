@@ -1,15 +1,19 @@
 import styles from './AuthPanel.module.scss';
 import cn from 'classnames'
-import { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { Dispatch, FC, SetStateAction } from 'react';
 import { ReactComponent as LoginSVG } from './login.svg';
+import { useAuth } from './userStore';
 
+interface AuthPanelProps {
+  openPopup: () => void
+  openProfile: Dispatch<SetStateAction<boolean>>
+}
 
-export const AuthPanel: FC = () => {
-  const isAuth = true
+export const AuthPanel: FC<AuthPanelProps> = ({ openPopup, openProfile }) => {
+  const isAuth = useAuth(state => state.isAuth)
   return (
-    <Link to={isAuth ? '/profile' : '/login'} className={cn(styles.authPanel)} >
+    <button onClick={(e) => isAuth ? openProfile((prev) => !prev) : openPopup()} className={cn(styles.authPanel)} >
       <LoginSVG />
-    </Link>
+    </button>
   )
 };

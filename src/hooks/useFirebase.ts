@@ -1,5 +1,5 @@
 import { useAuth } from '@/components/AuthPanel/userStore'
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth'
+import { createUserWithEmailAndPassword, getAuth, signInWithEmailAndPassword } from 'firebase/auth'
 
 
 
@@ -15,6 +15,21 @@ export const useFirebase = () => {
 			.catch((error) => onError(error.message))
 	}
 
+
+	const submitRegData = (email: string, password: string) => {
+		const auth = getAuth()
+		createUserWithEmailAndPassword(auth, email, password)
+			.then(({ user }) => {
+				loginIn(user.email)
+			})
+
+			.catch((error) => onError(error.message))
+
+	}
+
+	return {
+		submitAuthData, submitRegData
+	}
 }
 
 

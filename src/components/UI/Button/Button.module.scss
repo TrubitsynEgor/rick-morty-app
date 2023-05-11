@@ -11,6 +11,11 @@
 	font-family: var(--comicNeue);
 	text-shadow: 1px 1px 3px var(--dark);
 
+	&:disabled {
+		opacity: .4;
+		cursor: not-allowed;
+	}
+
 	& svg {
 		margin-top: 6px;
 	}
